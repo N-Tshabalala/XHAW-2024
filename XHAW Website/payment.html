@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            height: 100%;
+        }
+
+        nav {
+            background-color: #333; /* Dark grey for nav */
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 20px; /* Space between navigation items */
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; /* Remove margin for the last item */
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px; /* Increased horizontal padding for more spacing */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Lighter grey on hover */
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1; /* Allow main content to expand and fill available space */
+        }
+
+        .form-container {
+            background-color: #222; /* Darker background for form container */
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555; /* Border color */
+            border-radius: 5px;
+            background-color: #333; /* Input background color */
+            color: #fff; /* Input text color */
+        }
+
+        .course-list {
+            margin-top: 10px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .course-list li {
+            margin: 10px 0;
+        }
+
+        .calculate-btn {
+            background-color: #e15600; /* Button background color */
+            color: white; /* Button text color */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculate-btn:hover {
+            background-color: #d14500; /* Darker shade on hover */
+        }
+
+        .total-fee {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #000; /* Black background */
+            color: #e15600; /* Orange text */
+            text-align: center; /* Center the text */
+            padding: 10px 0; /* Padding for top and bottom */
+            width: 100%; /* Full width */
+            position: relative; /* Relative position */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="courses.html">Courses</a>
+                <ul class="dropdown">
+                    <li><a href="6week.html">6 Week Course</a></li>
+                    <li><a href="6month.html">6 Month Course</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html">Payment</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Fee Calculation</h1>
+        <p>Enter your details:</p>
+
+        <div class="form-container">
+            <form id="quotationForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Courses Available:</label>
+                    <ul class="course-list">
+                        <li><input type="checkbox" class="course" data-price="1500" value="First Aid"> First Aid Course - R1500</li>
+                        <li><input type="checkbox" class="course" data-price="1500" value="Sewing"> Sewing Course - R1500</li>
+                        <li><input type="checkbox" class="course" data-price="1500" value="Landscaping"> Landscaping Course - R1500</li>
+                        <li><input type="checkbox" class="course" data-price="1500" value="Life Skills"> Life Skills Course - R1500</li>
+                        <li><input type="checkbox" class="course" data-price="750" value="Child Minding"> Child Minding Course - R750</li>
+                        <li><input type="checkbox" class="course" data-price="750" value="Cooking"> Cooking Course - R750</li>
+                        <li><input type="checkbox" class="course" data-price="750" value="Garden Maintenance"> Garden Maintenance Course - R750</li>
+                    </ul>
+                </div>
+                <button type="button" class="calculate-btn" onclick="calculateTotal()">Calculate Total Fee</button>
+                <div class="total-fee" id="totalFee">Total Fee: R0.00</div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function calculateTotal() {
+            const checkboxes = document.querySelectorAll('.course:checked');
+            let totalAmount = 0;
+            const selectedCourses = [];
+
+            // Calculate total cost of selected courses
+            checkboxes.forEach(checkbox => {
+                const price = parseFloat(checkbox.getAttribute('data-price'));
+                totalAmount += price;
+                selectedCourses.push(checkbox.value);
+            });
+
+            // Apply discounts based on the number of courses selected
+            let discount = 0;
+            if (selectedCourses.length === 2) {
+                discount = 0.05;
+            } else if (selectedCourses.length === 3) {
+                discount = 0.10;
+            } else if (selectedCourses.length > 3) {
+                discount = 0.15;
+            }
+            const discountAmount = totalAmount * discount;
+            const discountedTotal = totalAmount - discountAmount;
+
+            // Add VAT (15%)
+            const vat = 0.15;
+            const totalWithVAT = discountedTotal * (1 + vat);
+
+            // Display the total fee
+            document.getElementById('totalFee').innerText = `Total Fee: R${totalWithVAT.toFixed(2)} (including VAT & discount)`;
+        }
+    </script>
+
+<footer>
+    <p>&copy; 2024 EmpowerTheNation. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    height: 100%; /* Full height */
+}
+
+nav {
+    background-color: #333; /* Dark grey for nav */
+    overflow: hidden; /* Clear floats */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    float: left; /* Align items horizontally */
+    margin-right: 20px; /* Space between navigation items */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+nav ul li a {
+    display: block; /* Make links block elements */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    padding: 14px 20px; /* Increased horizontal padding for more spacing */
+    text-decoration: none; /* Remove underline */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Lighter grey on hover */
+    color: white; /* Hover color */
+}
+
+nav ul li .dropdown {
+    display: none; /* Hide dropdown */
+    position: absolute; /* Position dropdown */
+    background-color: #444; /* Darker grey for dropdown */
+    min-width: 160px; /* Set minimum width */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+nav ul li .dropdown li {
+    float: none; /* Stack dropdown items */
+}
+
+header {
+    text-align: center; /* Center header text */
+    padding: 20px; /* Padding */
+}
+
+#logo {
+    max-width: 222px; /* Adjust logo size */
+}
+
+main {
+    flex: 1; /* Allow main content to expand */
+    padding: 20px; /* Padding for main content */
+}
+
+.overview, .course-discounts {
+    margin: 20px 0; /* Margin for sections */
+}
+
+h2, h3 {
+    color: #fff; /* White for headings */
+}
+
+ul {
+    list-style-type: disc; /* Bullet style for lists */
+    padding-left: 20px; /* Padding for lists */
+}
+
+/* Footer styles */
+footer {
+    background-color: #000; /* Black background */
+    color: #e15600; /* Orange text */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Padding for top and bottom */
+    width: 100%; /* Full width */
+    position: relative; /* Relative position */
+}
+
+
+.back-button:hover {
+    background-color: #777; /* Lighter grey on hover */
+}
+.back-button {
+    display: inline-block; /* Make it behave like a block */
+    background-color: #555; /* Darker grey background */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    text-align: center; /* Center text inside button */
+    margin-left: auto; /* Auto margin to center horizontally */
+    margin-right: auto; /* Auto margin to center horizontally */
+}
+
+main {
+    flex: 1; /* Allow main content to expand */
+    padding: 20px; /* Padding for main content */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text */
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+}

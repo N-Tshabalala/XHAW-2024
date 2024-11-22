@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Week Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            height: 100%;
+        }
+
+        nav {
+            background-color: #333; /* Dark grey for nav */
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 20px; /* Space between navigation items */
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; /* Remove margin for the last item */
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px; /* Increased horizontal padding for more spacing */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Lighter grey on hover */
+            color: white;
+        }
+
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #444; /* Darker grey for dropdown */
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        nav ul li .dropdown li {
+            float: none;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1; /* Allow main content to expand and fill available space */
+        }
+
+        .course-list {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .course-list li {
+            background-color: #222; /* Darker background for course items */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .course-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .course-list a {
+            text-decoration: none;
+            color: #e15600; /* Orange text for links */
+            font-weight: bold;
+        }
+
+        .course-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #000; /* Black background */
+            color: #e15600; /* Orange text */
+            text-align: center; /* Center the text */
+            padding: 10px 0; /* Padding for top and bottom */
+            width: 100%; /* Full width */
+            position: relative; /* Relative position */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="courses.html">Courses</a>
+                <ul class="dropdown">
+                    <li><a href="6week.html">6 Week Course</a></li>
+                    <li><a href="6month.html">6 Month Course</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html">Payment</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>Available 6W Courses</h1>
+        <ul class="course-list">
+            <li><a href="childmining.html">Child Minding Course</a></li>
+            <li><a href="cooking.html">Cooking Course</a></li>
+            <li><a href="garedemaintence.html">Garden Maintenance Course</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EmpowerTheNation. All rights reserved.</p>
+    </footer>
+</body>
+</html>

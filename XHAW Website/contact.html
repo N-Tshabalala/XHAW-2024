@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Month Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            height: 100%;
+        }
+
+        nav {
+            background-color: #333; /* Dark grey for nav */
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 20px; /* Space between navigation items */
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; /* Remove margin for the last item */
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px; /* Increased horizontal padding for more spacing */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Lighter grey on hover */
+            color: white;
+        }
+
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #444; /* Darker grey for dropdown */
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        nav ul li .dropdown li {
+            float: none;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1; /* Allow main content to expand and fill available space */
+        }
+
+        .course-list {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .course-list li {
+            background-color: #222; /* Darker background for course items */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .course-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .course-list a {
+            text-decoration: none;
+            color: #e15600; /* Orange text for links */
+            font-weight: bold;
+        }
+
+        .course-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #000; /* Black background */
+            color: #e15600; /* Orange text */
+            text-align: center; /* Center the text */
+            padding: 10px 0; /* Padding for top and bottom */
+            width: 100%; /* Full width */
+            position: relative; /* Relative position */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="courses.html">Courses</a>
+                <ul class="dropdown">
+                    <li><a href="#6week">6 Week Course</a></li>
+                    <li><a href="#6month">6 Month Course</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html">Payment</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="contact-info">
+            <h1>Contact Us</h1>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:EmpowerTheNation@gmail.com">EmpowerTheNation@gmail.com</a></p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+        </section>
+
+        <section id="venues">
+            <h2>Venues</h2>
+            <ul>
+                <li>
+                    <h3>Venue 1: Braamfontein</h3>
+                    <p>123 Jorissen St, Braamfontein, Johannesburg, 2000</p>
+                    <a href="https://www.bing.com/maps?osid=63e43bf3-d253-47a7-925a-d4bd9ca75d48&cp=-26.19325~28.028102&lvl=16.65&pi=0&v=2&sV=2&form=S00027">View on Google Maps</a>
+                </li>
+                <li>
+                    <h3>Venue 2: Sandton</h3>
+                    <p>456 Rivonia Rd, Sandton, Johannesburg, 2196</p>
+                    <a href="https://www.bing.com/maps?osid=18fe0d91-7cae-463f-a52a-3b2fd7bc14ed&cp=-26.192653~28.036702&lvl=17&pi=0&v=2&sV=2&form=S00027">View on Google Maps</a>
+                </li>
+                <li>
+                    <h3>Venue 3: Soweto</h3>
+                    <p>789 Vilakazi St, Soweto, Johannesburg, 1804</p>
+                    <a href="https://www.bing.com/maps?osid=0c7e3dfe-c77e-4d34-9c80-7d2d8ce8dfcd&cp=-26.114979~28.2215&lvl=16.67&pi=0&v=2&sV=2&form=S00027">View on Google Maps</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 EmpowerTheNation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
